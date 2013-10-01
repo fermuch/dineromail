@@ -16,7 +16,7 @@ describe Dineromail::Notification do
   end
   
   it 'should get automaticaly the status data associated with the notification' do
-    HTTParty.stub!(:get).and_return {
+    HTTParty.stub(:get).and_return {
       stub :body => File.read( 'spec/fixtures/status_report.xml')
     }
     notification_xml = File.read( 'spec/fixtures/notification.xml')
